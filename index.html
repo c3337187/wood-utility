@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Woodmart Theme Utility</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-text">
+        <h1>Woodmart Theme Utility</h1>
+        <p>
+          Подберите настройки темы Woodmart перед началом работы. Определите фирменный стиль,
+          типографику и параметры интерфейса, а затем экспортируйте итоговую конфигурацию для
+          импорта в проект WordPress.
+        </p>
+      </div>
+      <div class="header-actions">
+        <a class="doc-link" href="https://xtemos.com/docs-category/woodmart/" target="_blank" rel="noopener">
+          Документация Woodmart
+        </a>
+        <button id="reset-config" class="ghost-button" type="button">Сбросить</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="controls">
+        <h2>Настройки темы</h2>
+
+        <details open>
+          <summary>1. Бренд и палитра</summary>
+          <div class="controls-grid" id="brand-controls"></div>
+          <div class="palette-actions">
+            <button id="generate-palette" type="button">Сгенерировать палитру</button>
+          </div>
+        </details>
+
+        <details open>
+          <summary>2. Типографика</summary>
+          <div class="controls-grid" id="typography-controls"></div>
+        </details>
+
+        <details open>
+          <summary>3. Компоненты</summary>
+          <div class="controls-grid" id="component-controls"></div>
+        </details>
+
+        <details>
+          <summary>4. Сохранение и импорт</summary>
+          <div class="storage-controls">
+            <label class="storage-item">
+              <span>Загрузить конфигурацию</span>
+              <input id="import-config" type="file" accept="application/json" />
+            </label>
+            <button id="load-from-storage" type="button">Загрузить из браузера</button>
+            <button id="save-to-storage" type="button">Сохранить в браузере</button>
+          </div>
+        </details>
+      </section>
+
+      <section class="preview">
+        <div class="preview-header">
+          <h2>Предпросмотр</h2>
+          <div class="preview-actions">
+            <button id="copy-css" type="button">Скопировать CSS</button>
+            <button id="download-config" type="button">Скачать JSON</button>
+          </div>
+        </div>
+
+        <div class="preview-toolbar">
+          <label>
+            <span>Предустановки</span>
+            <select id="preset-select"></select>
+          </label>
+        </div>
+
+        <div id="preview-area" class="preview-area">
+          <section class="hero">
+            <span class="badge">Woodmart</span>
+            <h1>Элегантный магазин с древесной атмосферой</h1>
+            <p>
+              Сформируйте визуальный стиль и экспортируйте настройки темы в пару кликов. Утилита
+              поможет согласовать стили с брендбуком и ускорит старт проекта.
+            </p>
+            <div class="hero-actions">
+              <button class="primary">Каталог</button>
+              <button class="ghost">Консультация</button>
+            </div>
+          </section>
+
+          <section class="feature-grid">
+            <article class="feature-card">
+              <h3>Гибкая палитра</h3>
+              <p>
+                Управляйте базовыми цветами, оттенками для уведомлений и текстом. Палитра
+                генерируется автоматически на основе основного цвета бренда.
+              </p>
+              <a href="#">Подробнее</a>
+            </article>
+            <article class="feature-card">
+              <h3>Типографика</h3>
+              <p>
+                Выберите пары шрифтов из подборки совместимых Google Fonts и настройте масштаб
+                заголовков и текста.
+              </p>
+              <a href="#">Примеры</a>
+            </article>
+            <article class="feature-card">
+              <h3>Элементы интерфейса</h3>
+              <p>
+                Настройте радиусы скруглений, тени карточек и высоту кнопок, чтобы приблизиться к
+                финальному виду магазина.
+              </p>
+              <a href="#">Компоненты</a>
+            </article>
+          </section>
+
+          <section class="testimonial">
+            <blockquote>
+              «Woodmart Utility помогает представить будущий магазин клиенту ещё до установки
+              темы. Подберите цвета и шрифты, согласуйте их с заказчиком и экспортируйте итог».
+            </blockquote>
+            <cite>— Команда дизайна</cite>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <template id="color-control-template">
+      <label class="control">
+        <span class="label"></span>
+        <input type="color" class="color-input" />
+        <input type="text" class="text-input" />
+      </label>
+    </template>
+
+    <template id="range-control-template">
+      <label class="control">
+        <span class="label"></span>
+        <input type="range" class="range-input" />
+        <div class="range-meta">
+          <span class="value"></span>
+        </div>
+      </label>
+    </template>
+
+    <template id="select-control-template">
+      <label class="control">
+        <span class="label"></span>
+        <select class="select-input"></select>
+      </label>
+    </template>
+
+    <script src="assets/app.js" type="module"></script>
+  </body>
+</html>
